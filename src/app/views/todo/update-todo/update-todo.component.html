@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-head">
+
+  </div>
+  <div class="card-body">
+  <form [formGroup]="updateForm"  >
+    <input type="text" formControlName="title"  size="50" placeholder="Add Title">
+    <input type="text" formControlName="description"  size="50" placeholder="Add Descriptions">
+    <input type="submit" (click)="update()" value="Add New">
+</form>
+  </div>
+</div>

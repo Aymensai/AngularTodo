@@ -1,0 +1,29 @@
+
+<div class="card">
+  <div class="card-head">
+
+  </div>
+  <div class="card-body">
+    <button class="btn btn-primary" routerLink="/todo/add"> Add new </button>
+    
+
+
+    <table *ngIf="todos.length > 0" border="1">
+      <tr>
+        <td>Title</td>
+        <td>Description</td>
+        <td>Actions</td>
+      </tr>
+      <tr *ngFor="let todo of todos;">
+        <td class="card-title">{{ todo.title }}</td>
+        <td class="card-title">{{ todo.description }}</td>
+        <td> 
+          <button class="btn btn-info" [routerLink]="['/todo/details/', todo._id]"> Details</button>
+          <button class="btn btn-warning" [routerLink]="['/todo/update/', todo._id]"> Update</button>
+          <button class="btn btn-danger" (click)="deleteTodo(todo._id)"> Delete</button>
+        </td> 
+      </tr>
+    </table>
+    
+  </div>
+</div>
